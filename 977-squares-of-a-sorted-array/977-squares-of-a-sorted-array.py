@@ -4,7 +4,7 @@ class Solution:
         q = deque()
         l, r = 0, len(nums)-1
         for _ in nums:
-            nL, nR = nums[l]**2, nums[r]**2
+            nL, nR = nums[l]*nums[l], nums[r]*nums[r]
             if nL > nR:
                 q.appendleft(nL)
                 l+=1
