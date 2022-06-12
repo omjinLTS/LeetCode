@@ -1,14 +1,14 @@
-from collections import deque
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        q = deque()
-        l, r = 0, len(nums)-1
-        for _ in [0]*len(nums):
+        N = len(nums)
+        ret = [0]*N
+        l, r = 0, N-1
+        for i in range(1, N+1):
             nL, nR = nums[l]*nums[l], nums[r]*nums[r]
             if nL > nR:
-                q.appendleft(nL)
+                ret[-i] = nL
                 l+=1
             else:
-                q.appendleft(nR)
+                ret[-i] = nR
                 r-=1
-        return q
+        return ret
