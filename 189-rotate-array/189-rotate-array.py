@@ -5,5 +5,5 @@ class Solution:
         """
         tmp = nums+nums
         N = len(nums)
-        k=k%N
+        k%=N
         nums[:] = tmp[N-k:2*N-k]
